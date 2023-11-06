@@ -21,6 +21,10 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         Estate estate1 = new Estate("Nestlé", "Belgium");
         Estate estate2 = new Estate("Procter & Gamble", "USA");
+
+        estateService.saveEstate(estate1);
+        estateService.saveEstate(estate2);
+
         Chocolate chocolate1 = new Chocolate("KitKat1", 37, estate1);
         Chocolate chocolate2 = new Chocolate("Kitkat2", 38, estate1);
         Chocolate chocolate3 = new Chocolate("KitKat3", 39, estate1);
@@ -34,9 +38,5 @@ public class DataLoader implements ApplicationRunner {
         chocolateService.saveChocolate(chocolate4);
         chocolateService.saveChocolate(chocolate5);
         chocolateService.saveChocolate(chocolate6);
-
-        estateService.saveEstate(estate1);
-        estateService.saveEstate(estate2);
-
     }
 }
