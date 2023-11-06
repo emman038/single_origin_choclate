@@ -16,14 +16,14 @@ public class Estate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "country")
     private String country;
 
-    @OneToMany(mappedBy = "chocolate")
-    @JsonIgnoreProperties({"chocolate"})
+    @OneToMany(mappedBy = "estate")
+    @JsonIgnoreProperties({"estate"})
     private List<Chocolate> chocolates;
 
     public Estate(String name, String country) {
